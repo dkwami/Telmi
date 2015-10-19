@@ -1,0 +1,33 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* UNIVERSAL */
+
+html{
+  overflow-y: scroll;
+  background: #444
+}
+
+.center{
+  h1{
+    font-size: 8em;
+    letter-spacing: -13px;
+    padding-top: 80px;
+    font-weight: bold;
+  }
+
+  h2{
+    font-size: 3em;
+  }
+
+  text-align: center;
+  color: white;
+  background: #444;
+}
+
+/* HEADER */
+
+header{
+  background: #ddd
+}
+
