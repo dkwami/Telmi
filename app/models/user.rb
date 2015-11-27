@@ -9,9 +9,11 @@ class User < ActiveRecord::Base
   validates :lastName, presence: true, length: {maximum: 20}
   validates :birthday, presence: true
   # Password is required; still needs to be encrypted
-  validates :password, presence: true
+  validates :password_digest, presence: true, length: {minimum: 8}
 
   # Email address is required and must be unique; not case sensitive; must follow correct format
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
+
+  has_secure_password
 end
