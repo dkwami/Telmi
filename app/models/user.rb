@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  before_save {self.username = username.downcase,
-		self.email = email.downcase}
+  before_save {self.username = username.downcase}
+  before_save {self.email    = email.downcase}
 
   # Username is required and must be unique; not case sensitive
   validates :username, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 30} 
