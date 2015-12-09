@@ -43,13 +43,20 @@ header{
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 40%;
   margin-bottom: 15px;
   @include box_sizing;
 }
 
 input {
   height: auto !important;
+  margin-bottom: 60px;
+  background: #eee;
+}
+
+.btn {
+  background: #eb7;
+  width: 20%;
 }
 
 /* FORMAT OF DEBUG OUTPUT  */
