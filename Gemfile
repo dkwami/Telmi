@@ -10,6 +10,8 @@ gem 'turbolinks',           '2.3.0'
 gem 'jbuilder',             '2.2.3'
 gem 'sdoc',                 '0.4.0', group: :doc
 gem 'bcrypt',		    '3.1.7'
+#gem 'bootstrap-datepicker-rails'  '1.4.0'
+gem 'bootstrap-datepicker-rails', '~> 1.4'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
