@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   root			'static_pages#home'
-  get 'signup'	=>	'users#new'
+  get 'signup-1' =>	'users#new'
+  get 'signup-2' =>	'static_pages#signup2'
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

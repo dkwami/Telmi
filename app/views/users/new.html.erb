@@ -3,6 +3,8 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
       <%= f.label :firstName, "First Name" %><br>
       <%= f.text_field :firstName %><br>
 
@@ -18,12 +20,12 @@
       <%= f.label :password %><br>
       <%= f.password_field :password %><br>
 
-      <%= f.label :password_confirmation, "Confirmation" %><br>
+      <%= f.label :password_confirmation, "Password Confirmation" %><br>
       <%= f.password_field :password_confirmation %><br>
       
       <%= f.label :birthday, "Birthday" %><br>
       <%= f.date_field :birthday, :data => {:provide => "datepicker"},
-	class: "datepicker-form" %><br>
+	class: "datepicker-form", :placeholder => "MM/DD/YYY" %><br>
 
       <%= f.label :location, "Location (Optional)" %><br>
       <%= f.text_field :location %><br>
