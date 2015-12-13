@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-datepicker";
 
 /* UNIVERSAL */
 
@@ -57,6 +58,13 @@ input {
 .btn {
   background: #eb7;
   width: 20%;
+}
+
+.datepicker-form {
+  width: 15%;
+  position: center;  
+  autoclose: true;
+  display: inline-block;
 }
 
 /* FORMAT OF DEBUG OUTPUT  */

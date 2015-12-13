@@ -21,9 +21,9 @@
       <%= f.label :password_confirmation, "Confirmation" %><br>
       <%= f.password_field :password_confirmation %><br>
       
-      <%= f.label :birthday, "Birthday" %><br>
-      <%= f.date_field :birthday, :data => {:provide => "datepicker"},
-	class: "datepicker-form" %><br>
+      <label for="birthday">Birthday</label><br>
+      <input type="text" placeholder="MM/DD/YYYY" data-provide='datepicker' 
+	class="datepicker-form"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span><br>
 
       <%= f.label :location, "Location (Optional)" %><br>
       <%= f.text_field :location %><br>
