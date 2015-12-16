@@ -6,7 +6,7 @@
 
 html{
   overflow-y: scroll;
-  background: #444
+  background: white;
 }
 
 .center{
@@ -22,8 +22,8 @@ html{
   }
 
   text-align: center;
-  color: white;
-  background: #444;
+  color: #333;
+//  background: #444;
 }
 
 /* HEADER */
@@ -55,9 +55,23 @@ input {
   background: #eee;
 }
 
+.login-form {
+ // margin: auto;
+  margin-bottom: 0px;
+  width: 70%;
+  background: white;
+  @include box_sizing;
+}
+
 .btn {
   background: #eb7;
-  width: 5%;
+  width: 20%;
+  border: 1px solid #bbb;
+}
+
+.btn-secondary {
+  background: #0af;
+  border: 1px solid #bbb;
 }
 
 .datepicker-form {

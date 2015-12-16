@@ -1,2 +1,22 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<!--<h1 class="center">Log In</h1> -->
+
+<div clas="row">
+  <div class="col-md-6 col-md-offset-3" style="background: #eee; margin-top: 100px; width: 30%">
+    <h1 class="center">Log In</h1>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.email_field :email, class: 'login-form', :placeholder => "Email address" %><br>
+
+      <%= f.password_field :password, class: 'login-form', :placeholder => "Password" %><br><br>
+
+      <%= f.submit "Log In", class: "btn btn-secondary" %>
+    <% end %>
+
+    <%= button_to "Sign Up", signup_1_path, method: :get, class: "btn" %>
+
+    <p style="font-size: 1.5em"><%= link_to "Forgot my password", "http://www.google.com" %></p>
+  </div>
+</div>
+
+
