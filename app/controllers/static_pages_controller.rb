@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
 
   def signup2
   end
+
+  def feed
+  end
 end
