@@ -23,15 +23,17 @@ html{
 
   text-align: center;
   color: #333;
-//  background: #444;
 }
+
+body {
+  padding-top: 80px;
+}
+
 
 /* HEADER */
-
 header{
-  background: #ddd
+  background: #90eeff;
 }
-
 
 
 @mixin box_sizing {
@@ -56,7 +58,7 @@ input {
 }
 
 .login-form {
- // margin: auto;
+// margin: auto;
   margin-bottom: 0px;
   width: 70%;
   background: white;
