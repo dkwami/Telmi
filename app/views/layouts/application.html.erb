@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Telmi.Life</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<header>
-  <nav>
-    <ul class="nav navbar-fixed-top">
-      <li>TELMI</li>
-    </ul> 
-  </nav>
-</header>
-<body>
+  <head>
+    <title>Telmi.Life</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
 
-  <% flash.each do |message_type, message| %>
+    <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-  <%= yield %>
-  <%= debug(params) if Rails.env.development? %>
+    <% end %>
+    <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
 
-</body>
+  </body>
 </html>
