@@ -12,8 +12,10 @@ class UsersController < ApplicationController
     if @user.save
       # Handle a successful save.
       # redirect_to 'static_pages#signup2'
+      log_in @user
       flash[:success] = "Welcome to Telmi!"
-      redirect_to @user
+      #redirect_to @user
+      redirect_to signup_2_path
     else
       render 'new'
     end
