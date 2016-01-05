@@ -21,6 +21,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def signup2
+    @user = current_user
+  end
+
   private
 
     def user_params

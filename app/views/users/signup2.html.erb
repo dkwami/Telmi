@@ -1,13 +1,13 @@
-<h2>Given the opportunity to discover new things, what would you be interested in receiving recommendations for?</h2><br>
-<p>Check all that apply<p>
+<h4 class="col-md-offset-2">Given the opportunity to discover new things, what would you be interested in receiving recommendations for?</h4>
+<h4 class="col-md-offset-2">Check all that apply<h4>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(current_user, url: {action: "signup2"}) do |f| %>
+  <div class="col-md-6 col-md-offset-2">
+    <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :firstName, "First Name" %><br>
-      <%= f.text_field :firstName %><br>
+      <%= f.label :firstName, "Things to read" %><br>
+      <%= f.check_box(:firstName) %><br>
 
       <%= f.label :lastName, "Last Name" %><br>
       <%= f.text_field :lastName %><br>
