@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :thingsToReads 
+
   before_save {self.username = username.downcase}
   before_save {self.email    = email.downcase}
 
