@@ -2,9 +2,17 @@
   <p>Name: <%= @user.firstName %> <%= @user.lastName %></p><br>
   <p>Username: <%= @user.username %></p><br>
   <p>Location: <%= @user.location %></p>
-  <% if @user.thingsToReads.any? %>
-    <h4>Things <%= @user.username %> likes to read: 
+
+  <% if @user.books.any? %>
+    <h4>Things <%= @user.username %> likes to read: </h4>
       <ul class="things-to-read">
-	<%= render @thingsToReads %>
+	<%= @user.books.map {|b| b.title}.join(', ') %>
+      </ul>
+  <% end %>
+
+  <% if @user.movies.any? %>
+    <h4>Things <%= @user.username %> likes to watch: </h4>
+      <ul class="things-to-read">
+        <%= @user.movies.map {|m| m.title}.join(', ') %>
       </ul>
   <% end %>

@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    @books = Book.all
+    @movies = Movie.all
   end
 
   def show
     @user = User.find(params[:id])
-    @thingsToReads = @user.thingstoReads
+    #@thingsToReads = @user.thingstoReads
   end
 
   def create
@@ -30,6 +32,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:username, :firstName, :lastName, :email,
-					:birthday, :password, :password_confirmation, :location)
+					:birthday, :password, :password_confirmation, :location, 
+					:book_ids => [], :movie_ids => [])
     end
 end
