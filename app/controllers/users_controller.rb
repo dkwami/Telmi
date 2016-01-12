@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
     @books = Book.all
     @movies = Movie.all
+    @songs = Song.all
+    @games = Game.all
+#    @foods = Food.all
+#    @destinations = Destination.all
   end
 
   def show
@@ -33,6 +37,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :firstName, :lastName, :email,
 					:birthday, :password, :password_confirmation, :location, 
-					:book_ids => [], :movie_ids => [])
+					:book_ids => [], :movie_ids => [], :song_ids => [], :game_ids => [])
     end
 end

@@ -1,7 +1,7 @@
 <h1>This page will be used for TLM-5 Recommendation View</h1>
-  <p>Name: <%= @user.firstName %> <%= @user.lastName %></p><br>
-  <p>Username: <%= @user.username %></p><br>
-  <p>Location: <%= @user.location %></p>
+  <p>Name: <%= @user.firstName %> <%= @user.lastName %></p>
+  <p>Username: <%= @user.username %></p>
+  <p>Location: <%= @user.location %></p><br>
 
   <% if @user.books.any? %>
     <h4>Things <%= @user.username %> likes to read: </h4>
@@ -12,7 +12,35 @@
 
   <% if @user.movies.any? %>
     <h4>Things <%= @user.username %> likes to watch: </h4>
-      <ul class="things-to-read">
+      <ul class="things-to-watch">
         <%= @user.movies.map {|m| m.title}.join(', ') %>
+      </ul>
+  <% end %>
+
+  <% if @user.songs.any? %>
+    <h4>Things <%= @user.username %> likes to listen to: </h4>
+      <ul class="things-to-listen">
+        <%= @user.songs.map {|s| s.title}.join(', ') %>
+      </ul>
+  <% end %>
+
+  <% if @user.games.any? %>
+    <h4>Things <%= @user.username %> likes to play: </h4>
+      <ul class="things-to-play">
+        <%= @user.games.map {|g| g.title}.join(', ') %>
+      </ul>
+  <% end %>
+
+  <% if @user.foods.any? %>
+    <h4>Foods (or places where) <%= @user.username %> likes to eat: </h4>
+      <ul class="things-to-eat">
+        <%= @user.foods.map {|f| f.title}.join(', ') %>
+      </ul>
+  <% end %>
+
+  <% if @user.destinations.any? %>
+    <h4>Places <%= @user.username %> likes to visit: </h4>
+      <ul class="things-to-visit">
+        <%= @user.destinations.map {|d| d.title}.join(', ') %>
       </ul>
   <% end %>
