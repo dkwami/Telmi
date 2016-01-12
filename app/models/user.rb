@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :movies
   has_and_belongs_to_many :songs
   has_and_belongs_to_many :games
-#  has_and_belongs_to_many :foods
-#  has_and_belongs_to_many :destinations
+  has_and_belongs_to_many :foods
+  has_and_belongs_to_many :destinations
 
   before_save {self.username = username.downcase}
   before_save {self.email    = email.downcase}
