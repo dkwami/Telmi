@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #@thingsToReads = @user.thingstoReads
+    @recommendation = @user.recommendations.build if logged_in?
   end
 
   def create
