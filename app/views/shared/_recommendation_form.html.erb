@@ -5,10 +5,23 @@
     <%= f.text_area :title %><br><br>
 
     <%= f.label :category, "What is it?" %><br><br>
-    
+    <%= f.radio_button(:category, "read") %>
+    <%= f.label(:cat_read, "Something to read") %><br>
+    <%= f.radio_button(:category, "watch") %>
+    <%= f.label(:cat_watch, "Something to watch") %><br>
+    <%= f.radio_button(:category, "listen") %>
+    <%= f.label(:cat_listen, "Something to listen to") %><br>
+    <%= f.radio_button(:category, "play") %>
+    <%= f.label(:cat_play, "Something to play") %><br>
+    <%= f.radio_button(:category, "eat") %>
+    <%= f.label(:cat_eat, "Something to eat") %><br>
+    <%= f.radio_button(:category, "go") %>
+    <%= f.label(:cat_go, "Somewhere to go") %><br><br>
 
     <%= f.label :description, "Provide a few sentences to describe the recommendation." %><br>
     <%= f.text_area :description %><br><br>
+
+    <%= f.hidden_field(:user_id, :value => @user.id) %>
   </div>
   <%= f.submit "I'm Done", class: "btn btn-primary" %>
 <% end %>
