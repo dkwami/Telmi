@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'signup-1' =>	'users#new'
   get 'signup-2' =>	'users#signup2'
   get 'feed'	 =>	'static_pages#feed'
+  get 'recommendations' => 'users#recommendations'
 
   get    'login' =>	'sessions#new'
   post   'login' =>	'sessions#create'

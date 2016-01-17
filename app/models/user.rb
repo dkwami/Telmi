@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #has_many :thingsToReads 
+  has_many :recommendations, dependent: :destroy
   has_and_belongs_to_many :books
   has_and_belongs_to_many :movies
   has_and_belongs_to_many :songs

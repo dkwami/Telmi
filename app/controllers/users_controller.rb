@@ -32,6 +32,11 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def recommendations
+    @user = current_user
+    @recommendations = @user.recommendations #.paginate(page: params[:page])
+  end
+
   private
 
     def user_params
