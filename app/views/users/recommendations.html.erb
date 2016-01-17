@@ -1,0 +1,10 @@
+<h2 class="col-md-offset-1">Your Recommendations</h2>
+<p class="col-md-offset-1">Click on an item below to see details.</p><br><br>
+
+<div class="col-md-offset-1">
+  <% if @user.recommendations.any? %>
+    <ul class = "recommendations">
+      <%= render @recommendations %>
+    </ul>
+  <% end %>
+</div>
