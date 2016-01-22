@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root			'static_pages#home'
   get 'signup-1' =>	'users#new'
   get 'signup-2' =>	'users#signup2'
-  get 'feed'	 =>	'static_pages#feed'
+  get 'feed'	 =>	'users#index'
   get 'recommendations' => 'users#recommendations'
 
   get    'login' =>	'sessions#new'

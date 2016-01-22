@@ -1,0 +1,23 @@
+<h1 class="col-md-offset-1">Feed</h1>
+<h4 class="col-md-offset-1">Make recommendations to other users based on the information they've provided.</h4>
+
+<ul class="users col-md-offset-1">
+  <% @users.each do |user| %>
+    <li>
+      <p>
+      <%= link_to user.username, user %><br>
+      Age: <%= user.birthday %><br>
+      Location: <%= user.location %><br>
+      Looking for: <%= "things to read," if user.books.any? %>
+                   <%= "things to watch," if user.movies.any? %>
+                   <%= "things to listen to," if user.songs.any? %>
+                   <%= "things to play," if user.games.any? %>
+                   <%= "things to eat," if user.foods.any? %>
+                   <%= "places to visit" if user.destinations.any? %>
+                <br>
+    </li>
+  <% end %>
+</ul>
+
+<br><br><br>
+<h4 class="col-md-offset-4"> That's it for now! Check back later for more. </h4>

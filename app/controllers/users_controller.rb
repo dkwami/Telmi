@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:signup2, :recommendations]
+
   def new
     @user = User.new
     @books = Book.all
@@ -27,6 +29,10 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def index
+    @users = User.all
+  end  
 
   def signup2
     @user = current_user
