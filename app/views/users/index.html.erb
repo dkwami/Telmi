@@ -6,15 +6,18 @@
     <li>
       <p>
       <%= link_to user.username, user %><br>
-      Age: <%= user.birthday %><br>
+      Age: <%= age(user.id) %><br>
       Location: <%= user.location %><br>
-      Looking for: <%= "things to read," if user.books.any? %>
-                   <%= "things to watch," if user.movies.any? %>
-                   <%= "things to listen to," if user.songs.any? %>
-                   <%= "things to play," if user.games.any? %>
-                   <%= "things to eat," if user.foods.any? %>
-                   <%= "places to visit" if user.destinations.any? %>
-                <br>
+      
+      <% interests = [] %>
+      <% interests << "things to read" if user.books.any? %>
+      <% interests << "things to watch" if user.movies.any? %>
+      <% interests << "things to listen to" if user.songs.any? %>
+      <% interests << "things to play" if user.games.any? %>
+      <% interests << "things to eat" if user.foods.any? %>
+      <% interests << "places to visit" if user.destinations.any? %>
+      
+      Looking for: <%= interests.join(", ") %><br>
     </li>
   <% end %>
 </ul>
