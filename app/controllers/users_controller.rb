@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     @destinations = Destination.all
   end
 
+  # show action
+  # finds a given user based on the passed-in parameter
+  # 
   def show
     @user = User.find(params[:id])
     @recommendation = @user.recommendations.build if logged_in?

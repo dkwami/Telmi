@@ -17,6 +17,14 @@ class RecommendationsController < ApplicationController
   def destroy
   end
 
+  def show
+    @recommendation = Recommendation.find(params[:id])  
+
+    # add javascript template to allow recommendation to be shown in pop up window
+    respond_to do |format|
+      format.js
+  end
+
   private
   
     def recommendation_params

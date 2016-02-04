@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-delali = User.find(2)
+delali = User.find(15)
 7.times do
   title = Faker::Hipster.sentence(Faker::Hipster.rand_in_range(1,4))
   category = Faker::Hipster.word
