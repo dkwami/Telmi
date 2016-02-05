@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def recommendations
+  def review
     @user = current_user
     @recommendations = @user.recommendations #.paginate(page: params[:page])
   end

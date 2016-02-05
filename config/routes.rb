@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'signup-1' =>	'users#new'
   get 'signup-2' =>	'users#signup2'
   get 'feed'	 =>	'users#index'
-  get 'recommendations' => 'users#recommendations'
+  get 'review'   =>     'users#review'
 
   get    'login' =>	'sessions#new'
   post   'login' =>	'sessions#create'
