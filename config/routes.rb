@@ -3,14 +3,28 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root			'static_pages#home'
-  get 'signup-1' =>	'users#new'
-  get 'signup-2' =>	'users#signup2'
-  get 'feed'	 =>	'users#index'
-  get 'recommendations' => 'users#recommendations'
+  
+  # Route for getting the NDA page. Is called when "Sign Up" is clicked in header.
+  get       'nda_page'        => 'users#nda_page'
+  
+  # Route for the first signup page. Is called when "I Agree" is clicked on NDA page.
+  get       'signup-1'        => 'users#new'
+  
+  # Not in use yet. Will be for the second signup page, intended to follow the first.
+  # get       'signup-2'        => 'users#signup2'
+  
+  # Route to take users to their feed. Is called when "Feed" is clicked in header.
+  get       'feed'	          => 'users#index'
+  
+  # Route to take users to their recommendations. Is called when "Recommendations" is clicked in the header.
+  get       'recommendations' => 'users#recommendations'
 
-  get    'login' =>	'sessions#new'
-  post   'login' =>	'sessions#create'
-  delete 'logout'=>	'sessions#destroy'
+  # Routes to make a new session. Is called when a user logs in.
+  get       'login'           =>	'sessions#new'
+  post      'login'           =>	'sessions#create'
+  
+  # Route to destroy the current session. Is called when "Log Out" is clicked in the header.
+  delete    'logout'          =>	'sessions#destroy'
 
   resources :users
   resources :recommendations, only: [:create, :destroy]

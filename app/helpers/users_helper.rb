@@ -14,7 +14,7 @@ module UsersHelper
      else
          @user_age = @now.year - @user.birthday.year - 1
          #print @user_age
-    end
+     end
 
     #puts "here!"
   end

@@ -1,0 +1,2 @@
+class NdaPageController < ApplicationController
+end

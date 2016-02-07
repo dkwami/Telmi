@@ -1,21 +1,42 @@
 <!--<h1 class="center">Log In</h1> -->
 
 <div clas="row">
-  <div class="col-md-6 col-md-offset-3" style="background: #eee; margin-top: 100px; width: 30%">
-    <h1 class="center">Log In</h1>
+  <div class="col-md-6 col-md-offset-3" id="login-screen">
+    <div>
+      <h1 class="center">Log In</h1>
 
-    <%= form_for(:session, url: login_path) do |f| %>
+      <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.email_field :email, class: 'login-form', :placeholder => "Email address" %><br>
+      <%= f.label :email, "email", class: 'login-center login-label' %>
+      
+      <div style="clear: both"></div>
+      
+      <%= f.email_field :email, class: 'login-form login-center', 
+                        :placeholder => "Email address" %><br>
+                        
+      <div style="clear: both"></div>
+      <div style="padding: 5px"></div>
+      
+      <%= f.label :password, "password", class: 'login-center login-label' %>
+      
+      <div style="clear: both"></div>
+      
+      <%= f.password_field :password, class: 'login-form login-center',
+                           :placeholder => "Password" %><br><br>
 
-      <%= f.password_field :password, class: 'login-form', :placeholder => "Password" %><br><br>
+      <%= f.submit "Log In", class: "btn btn-secondary login-center" %>
+      <% end %>
 
-      <%= f.submit "Log In", class: "btn btn-secondary" %>
-    <% end %>
-
-    <%= button_to "Sign Up", signup_1_path, method: :get, class: "btn" %>
-
-    <p style="font-size: 1.5em"><%= link_to "Forgot my password", "http://www.google.com" %></p>
+      <%= button_to "Sign Up", signup_1_path, method: :get, class: "btn", 
+          id: "login-btn-push" %>
+    </div>
+        
+    <div style="clear: both"></div>
+    
+    <div>
+    <p class="login-center" id="forgot-password"><%= link_to "Forgot my password", 
+          "http://www.google.com" %></p>
+    </div>
   </div>
 </div>
 

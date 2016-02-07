@@ -1,0 +1,2 @@
+module NdaPageHelper
+end

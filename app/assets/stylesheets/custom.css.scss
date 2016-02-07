@@ -29,12 +29,65 @@ body {
   padding-top: 80px;
 }
 
+/* TYPOGRAPHY */
 
-/* HEADER */
-header{
-  background: #90eeff;
+h1, h2, h3, h4, h5, h6 {
+  line-height:1;
 }
 
+h1 {
+  font-size:3em;
+  letter-spacing:-2px;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+h2 {
+  font-size:1.2em;
+  letter-spacing:-1px;
+  margin-bottom:30px;
+  text-align:center;
+  font-weight:normal;
+  color:$gray-light;
+}
+
+p {
+  font-size:1.1em;
+  line-height:1.7em;
+}
+
+
+/* HEADER */
+
+header{
+  //background: #90eeff;
+  background: #7bb3ff;
+  a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    &:hover{
+      color: #7bb3ff;
+      background-color: white;
+    }
+  }
+}
+
+#logo {
+  float: left;
+  margin-right:10px;
+  font-size:1.7em;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:-1px;
+  padding-top:9px;
+  font-weight:bold;
+  &:hover {
+    color:#fff;
+    text-decoration:none;
+    background-color:#7bb3ff;
+  }
+}
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -43,13 +96,11 @@ header{
 }
 
 
-
-
 /* FORMS */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 20%;
+  width: 30%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -60,38 +111,97 @@ input {
   background: #eee;
 }
 
+/*LOGIN*/
+
 .login-form {
-// margin: auto;
+  padding: 5px;
   margin-bottom: 0px;
   width: 70%;
   background: white;
   @include box_sizing;
 }
 
+.login-label {
+  padding: 1px 0;
+  font-size: 1.2em;
+}
+
+#login-screen{
+  background: #eee; 
+  margin-top: 100px; 
+  width: 30%; 
+  margin-left: 35%
+}
+
 .btn {
-  background: #eb7;
-  width: 20%;
+  background: #ffc77b;
+  color: white;
+  font-weight: bold;
+  width: 80px;
   border: 1px solid #bbb;
+  float: left;
 }
 
 .btn-secondary {
-  background: #0af;
+  background: #7bb3ff;
   border: 1px solid #bbb;
 }
 
+#login-btn-push {
+  float: right;
+  margin-right: 15%;
+}
+
+.login-center {
+  margin-left: 15%;
+}
+
+#forgot-password {
+  font-size: 1.2em;
+  margin-top: 10px;
+  float: left;
+}
+
+
+/*NDA*/
+
+.nda-btn {
+  float: right;
+  width: 100px;
+  margin-left: 30px;
+}
+
+
+/*SIGNUP*/
+
+#signup-one {
+  margin-left: 25%;
+}
+
+/*.signup-one-field {
+  width: 300px;
+}*/
+
+
+
 .datepicker-form {
-  width: 10%;
+  width: 30%;
   position: center;  
   autoclose: true;
   display: inline-block;
 }
 
+
 /* FORMAT OF DEBUG OUTPUT  */
 .debug_dump {
   clear: both;
   float: left;
-  width: 100%;
+  //position: absolute;
+  //left:30%;
+  //margin-right: -50%;
+  width: 40%;
   margin-top: 45px;
+  margin-left: 30%;
   @include box_sizing;
 }
 

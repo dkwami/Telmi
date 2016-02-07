@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116233123) do
+ActiveRecord::Schema.define(version: 20160206213925) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160116233123) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "category"
   end
 
   add_index "recommendations", ["user_id"], name: "index_recommendations_on_user_id"
@@ -100,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160116233123) do
     t.date     "birthday"
     t.string   "password_digest"
     t.string   "location"
+    t.boolean  "nda_agree"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

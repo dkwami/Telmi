@@ -1,34 +1,37 @@
 <h1 class="center">Sign Up</h1>
 
-<div class="row">
+<div class="row", id="signup-one">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :firstName, "First Name" %><br>
-      <%= f.text_field :firstName %><br>
+      <%= f.text_field :firstName, class: "signup-one-field" %><br>
 
       <%= f.label :lastName, "Last Name" %><br>
-      <%= f.text_field :lastName %><br>
+      <%= f.text_field :lastName, class: "signup-one-field" %><br>
 
       <%= f.label :email %><br>
-      <%= f.email_field :email %><br>
+      <%= f.email_field :email, class: "signup-one-field" %><br>
 
       <%= f.label :username %><br>
-      <%= f.text_field :username %><br>
+      <%= f.text_field :username, class: "signup-one-field" %><br>
 
       <%= f.label :password %><br>
-      <%= f.password_field :password %><br>
+      <%= f.password_field :password, class: "signup-one-field" %><br>
 
       <%= f.label :password_confirmation, "Password Confirmation" %><br>
-      <%= f.password_field :password_confirmation %><br>
+      <%= f.password_field :password_confirmation, class: "signup-one-field" %><br>
       
       <%= f.label :birthday, "Birthday" %><br>
-      <%= f.date_field :birthday, :data => {:provide => "datepicker"},
-	class: "datepicker-form", :placeholder => "MM/DD/YYY" %><br>
+      <%= f.date_field :birthday, 
+                       #Delali, I took this out and the date picker works.
+                       #:data => {:provide => "datepicker"},
+	                     class: "datepicker-form", 
+	                     :placeholder => "MM/DD/YYY" %><br>
 
       <%= f.label :location, "Location (Optional)" %><br>
-      <%= f.text_field :location %><br>
+      <%= f.text_field :location, class: "signup-one-field" %><br>
 
       <%= f.submit "Next", class: "btn btn-primary" %>
     <% end %>
