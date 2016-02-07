@@ -6,7 +6,7 @@
         <% if logged_in? %>
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Feed", feed_path %></li>
-          <li><%= link_to "Recommendations", recommendations_path %></li>
+          <li><%= link_to "Recommendations", review_path %></li>
 	        <li class="divider"></li>
 	        <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
 	      <% else %>
