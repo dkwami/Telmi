@@ -2,7 +2,5 @@ $(document).ready(function(){
   // once the recommendation title is clicked in app/views/users/review, the recommendation details will be shown
   $('#rec-title-<%=@recommendation.id %>').click(function(event) {
     var myWindow = window.alert("Category: <%=@recommendation.category%> \nDescription: <%= @recommendation.description%> \nWords that describe <%=@recommendation.title%>: ");
-    $('#category-<%= @recommendation.id %>').toggle();
-    $('#description-<%= @recommendation.id %>').toggle();
   });
 });
