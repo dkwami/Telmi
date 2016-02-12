@@ -1,1 +1,8 @@
-window.open (<%= escape_javascript(recommendation_path) %>, "window", "width=800, height=400");
+$(document).ready(function(){
+
+  $('#rec-title-<%=@recommendation.id %>').click(function(event) {
+  //  event.preventDefault();
+    $('#category-<%= @recommendation.id %>').toggle();
+    $('#description-<%= @recommendation.id %>').toggle();
+  });
+});

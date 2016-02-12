@@ -1,9 +1,0 @@
-<li id="recommendation-<%= recommendation.id %>">
-  <p>
-    <!--displays link to view each recommendation in a pop up window -->
-    <h4><span class="title"><%= link_to recommendation.title, recommendation_path, :remote => true, :id => recommendation.id %></span></h4>
-    <span class="category">Category: <%= recommendation.category %></span><br>
-    <span class="description">Description: <%= recommendation.description %></span>
-  </p>
-<br>
-</li>
