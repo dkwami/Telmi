@@ -23,8 +23,8 @@ class RecommendationsController < ApplicationController
 
     # add javascript template to allow recommendation to be shown in pop up window
     respond_to do |format|
-      format.js
-      format.js  #added to appease the compiler, honestly
+      format.js 
+      format.html #added to appease the compiler, honestly
     end
   end
 
