@@ -1,0 +1,17 @@
+<div>
+  <!-- TODO: replace :category with :feedback -->
+  <%= form_for(@recommendation) do |f| %>
+    <%= f.label :category, "What do you think of this recommendation?" %><br><br>
+    <%= f.radio_button(:category, "1") %>
+    <%= f.label(:yes, "This is definitely for me.") %><br>
+    <%= f.radio_button(:category, ".5") %>
+    <%= f.label(:maybe, "I'll look into it.") %><br>
+    <%= f.radio_button(:category, "0") %>
+    <%= f.label(:meh, "I'm indifferent.") %><br>
+    <%= f.radio_button(:category, "-1") %>
+    <%= f.label(:no, "This is definitely not for me.") %><br>
+    <!-- gets the id of the user currently being viewed so 
+         that a recommendation can be created for that user -->
+    <%= f.submit "Ok", class: "btn btn-primary" %>  
+  <% end %>
+</div>

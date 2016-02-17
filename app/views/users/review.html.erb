@@ -4,8 +4,9 @@
 <div class="col-md-offset-1">
   <% if @user.recommendations.any? %>
     <ul class = "recommendations">
-      <!-- displays contents of app/views/recommendations/_recommendation.html.erb -->
+      <!-- displays contents of app/views/recommendations/_recommendation.html.erb for each of the current user's recommendations -->
       <%= render @recommendations %>
     </ul>
   <% end %>
 </div>
+
