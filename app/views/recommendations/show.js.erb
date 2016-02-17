@@ -7,7 +7,8 @@ $(document).ready(function(){
 //    $('body').append('<div style="' + overlay_white + '"><p>heeeyyy</p></div>');
 
     el = document.getElementById('#rec-<%= @recommendation.id %>-details');
-    el.style.visibility = (el.style.visibility == "visibile") ? "hidden" : "visible";
+    //el.style.visibility = (el.style.visibility == "visibile") ? "hidden" : "visible";
+    $('body').html('<%= escape_javascript(render 'feedback') %>');
 
   });
 });
