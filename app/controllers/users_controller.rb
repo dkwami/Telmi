@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   #Action to display the NDA page. Called when "Sign Up" is clicked.
   def nda_page
     render "nda_page/nda_page"
+    @@nda_agree = false
   end
   
   #Action to create a new user. Called when "I agree" is clicked on NDA page.
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
     @games =        Game.all
     @foods =        Food.all
     @destinations = Destination.all
+    @@nda_agree = true
   end
 
   def show
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # Handle a successful save.
+      @user.update_attribute(:nda_agree, @@nda_agree)
       log_in @user
       flash[:success] = "Welcome to Telmi!"
       redirect_to @user
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+    
   end
 
   #Action to create a list of all users stored to a session variable.
@@ -59,8 +63,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :firstName, :lastName, :email,
 					                         :birthday, :password, :password_confirmation, 
-					                         :location, :book_ids => [], :movie_ids => [], 
-					                         :song_ids => [], :game_ids => [], 
-					                         :food_ids => [], :destination_ids =>[])
+					                         :location, :nda_agree, :book_ids => [], 
+					                         :movie_ids => [], :song_ids => [], 
+					                         :game_ids => [], :food_ids => [], 
+					                         :destination_ids =>[])
     end
+    
 end
