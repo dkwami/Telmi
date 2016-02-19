@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get       'feed'	          => 'users#index'
   
   # Route to take users to their recommendations. Is called when "Recommendations" is clicked in the header.
-  get       'recommendations' => 'users#recommendations'
+  get 'review'   =>     'users#review'
 
   # Routes to make a new session. Is called when a user logs in.
   get       'login'           =>	'sessions#new'
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   delete    'logout'          =>	'sessions#destroy'
 
   resources :users
-  resources :recommendations, only: [:create, :destroy]
+  resources :recommendations, only: [:create, :destroy, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -19,6 +19,9 @@ class UsersController < ApplicationController
     @@nda_agree = true
   end
 
+  # show action
+  # finds a given user based on the passed-in parameter
+  # 
   def show
     @user = User.find(params[:id])
     @recommendation = @user.recommendations.build if logged_in?
@@ -52,7 +55,7 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def recommendations
+  def review
     @user = current_user
     @recommendations = @user.recommendations #.paginate(page: params[:page])
   end
