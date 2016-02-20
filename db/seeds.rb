@@ -12,7 +12,8 @@ User.create!(firstName: "Delali",
              email: "delali.kwami@gmail.com", 
              password: "password", 
              password_confirmation: "password",
-             birthday: "1990-03-14")
+             birthday: "1990-03-14",
+             nda_agree: "true")
              
 User.create!(firstName: "Jacob",
              lastName: "Wiser",
@@ -20,7 +21,8 @@ User.create!(firstName: "Jacob",
              email: "jacob.r.wiser@gmail.com", 
              password: "password", 
              password_confirmation: "password",
-             birthday: "1990-06-25")
+             birthday: "1990-06-25",
+             nda_agree: "true")
 
 delali = User.find(1)
 7.times do

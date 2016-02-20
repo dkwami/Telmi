@@ -1,6 +1,17 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:signup2, :recommendations]
-
+  
+  # checks to make sure there is a logged in user before loading the page and
+  #performs certain actions if there isn't
+  before_action :logged_in_user, only: [:signup2, :recommendations, :index, 
+                                        :review]
+                                        
+  # checks to make sure the user view the page is the user which should be
+  #viewing (in the case of multiple windows, etc)
+  before_action :correct_user, only: [:signup2, :recommendations]
+  
+  # checks to make sure the user's nda_agree is "true", or it redirects to nda
+  before_action :nda_signed, only: [:signup2, :recommendations, :index, :review]
+  
   #Action to display the NDA page. Called when "Sign Up" is clicked.
   def nda_page
     render "nda_page/nda_page"
@@ -19,19 +30,18 @@ class UsersController < ApplicationController
     @@nda_agree = true
   end
 
-  # show action
   # finds a given user based on the passed-in parameter
-  # 
   def show
     @user = User.find(params[:id])
     @recommendation = @user.recommendations.build if logged_in?
   end
 
-  #Action to create the new user on the first signup page. Called when "Next" is clicked.
+  # Action to create the new user on the first signup page. Called when "Next" 
+  #is clicked.
   def create
     @user = User.new(user_params)
+    # Handle a successful save.
     if @user.save
-      # Handle a successful save.
       @user.update_attribute(:nda_agree, @@nda_agree)
       log_in @user
       flash[:success] = "Welcome to Telmi!"
@@ -43,7 +53,7 @@ class UsersController < ApplicationController
     
   end
 
-  #Action to create a list of all users stored to a session variable.
+  # Action to create a list of all users stored to a session variable.
   def index
     @users = User.all
   end
@@ -62,7 +72,8 @@ class UsersController < ApplicationController
 
   private
 
-    #Method which defines which items are required and which are permitted when passing info on a user.
+    # Method which defines which items are required and which are permitted when 
+    #passing info on a user.
     def user_params
       params.require(:user).permit(:username, :firstName, :lastName, :email,
 					                         :birthday, :password, :password_confirmation, 
@@ -72,4 +83,27 @@ class UsersController < ApplicationController
 					                         :destination_ids =>[])
     end
     
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+    
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+    
+    # Confirms the user has signed the NDA and redirects if they haven't.
+    def nda_signed
+      @user = current_user
+      unless @user.nda_agree?
+        flash[:danger] = "Please agree to NDA before proceeding"
+        redirect_to nda_page_url
+      end
+    end
 end
