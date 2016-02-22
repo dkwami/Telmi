@@ -1,0 +1,60 @@
+<h4 class="col-md-offset-2">Given the opportunity to experience anything in the
+                            world, what would you be interested in receiving 
+                            recommendations for?</h4>
+<h4 class="col-md-offset-2">Check all that apply<h4>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <%= form_for(@user, url: new_user_feed_path) do |f| %>
+      
+      <%= f.label :read_interest, "Things to read (books, magazines, 
+                                 articles)" %>
+      <%= f.check_box :read_interest, id: "read-interest-box" %><br>
+      
+      <%= f.label :watch_interest, "Things to watch (movies, shows, online 
+                                 videos)" %>
+      <%= f.check_box :watch_interest, id: "watch-interest-box" %><br>
+      
+      <%= f.label :listen_interest, "Things to listen to (music, audiobooks, 
+                                 lectures)" %>
+      <%= f.check_box :listen_interest, id: "listen-interest-box" %><br>
+      
+      <%= f.label :play_interest, "Things to play (video games, apps, 
+                                 board games)" %>
+      <%= f.check_box :play_interest, id: "play-interest-box" %><br>
+      
+      <%= f.label :eat_interest, "Things to eat (restaurants, cuisine, 
+                                 store-bought)" %>
+      <%= f.check_box :eat_interest, id: "eat-interest-box" %><br>
+      
+      <%= f.label :travel_interest, "Places to visit (venues, stores, historical, 
+                                 vacation)" %>
+      <%= f.check_box :travel_interest, id: "visit-interest-box" %><br>
+      
+      <%= f.label :other_interest, "Other:" %>
+      <%= f.check_box :other_interest, id: "other-interest-box" %>
+      <%= f.text_field :other_interest, id: "other-interest-text" %><br>
+
+      <%= f.submit "Finish", class: "btn btn-primary" %>
+      
+    <% end %>
+    
+    <br>
+    
+    <div id="read-interest-text">
+      
+      Read interest text box proxy.
+      
+    </div>
+    
+    <br>
+    
+    <div class="signup-2-hidden-div" id="help">
+      
+      Here's some texty text.
+      
+    </div>
+    
+  </div>
+</div>
+<%= javascript_include_tag "application" %>

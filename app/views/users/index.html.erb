@@ -11,12 +11,13 @@
       Location: <%= user.location %><br>
       
       <% interests = [] %>
-      <% interests << "things to read" if user.books.any? %>
-      <% interests << "things to watch" if user.movies.any? %>
-      <% interests << "things to listen to" if user.songs.any? %>
-      <% interests << "things to play" if user.games.any? %>
-      <% interests << "things to eat" if user.foods.any? %>
-      <% interests << "places to visit" if user.destinations.any? %>
+      <% interests << "things to read"         if user.read_interest? %>
+      <% interests << "things to watch"        if user.watch_interest? %>
+      <% interests << "things to listen to"    if user.listen_interest? %>
+      <% interests << "things to play"         if user.play_interest? %>
+      <% interests << "things to eat"          if user.eat_interest? %>
+      <% interests << "places to visit"        if user.travel_interest? %>
+      <% interests << "#{user.other_interest}" if user.other_interest? %>
       
       Looking for: <%= interests.join(", ") %><br>
     </li>

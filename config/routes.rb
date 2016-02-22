@@ -1,23 +1,26 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  get                             'sessions/new'
 
-  root			'static_pages#home'
+  root			                      'static_pages#home'
   
   # Route for getting the NDA page. Is called when "Sign Up" is clicked in header.
-  get       'nda_page'        => 'users#nda_page'
+  get       'nda_page'        =>  'users#nda_page'
   
   # Route for the first signup page. Is called when "I Agree" is clicked on NDA page.
-  get       'signup-1'        => 'users#new'
+  get       'signup_1'        =>  'users#new'
   
-  # Not in use yet. Will be for the second signup page, intended to follow the first.
-  # get       'signup-2'        => 'users#signup2'
+  # Route for the second signup page. Is called when "Next" is clicked on first signup page.
+  post      'signup_2'        =>  'users#create'
   
-  # Route to take users to their feed. Is called when "Feed" is clicked in header.
-  get       'feed'	          => 'users#index'
+  # Route to take users to their feed after clicking "Done" on second signup page. 
+  patch     'new_user_feed'	  =>  'users#augment'
+  
+  # Route to take a user to the feed. Is used when user clicks "Feed" in header.
+  get       'feed'            =>  'users#index'
   
   # Route to take users to their recommendations. Is called when "Recommendations" is clicked in the header.
-  get 'review'   =>     'users#review'
+  get       'review'          =>  'users#review'
 
   # Routes to make a new session. Is called when a user logs in.
   get       'login'           =>	'sessions#new'

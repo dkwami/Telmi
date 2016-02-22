@@ -13,7 +13,10 @@ User.create!(firstName: "Delali",
              password: "password", 
              password_confirmation: "password",
              birthday: "1990-03-14",
-             nda_agree: "true")
+             nda_agree: "true",
+             read_interest: "true",
+             watch_interest: "true",
+             listen_interest: "true")
              
 User.create!(firstName: "Jacob",
              lastName: "Wiser",
@@ -22,7 +25,14 @@ User.create!(firstName: "Jacob",
              password: "password", 
              password_confirmation: "password",
              birthday: "1990-06-25",
-             nda_agree: "true")
+             nda_agree: "true",
+             read_interest: "true",
+             watch_interest: "true",
+             listen_interest: "true", 
+             play_interest: "true",
+             eat_interest: "true",
+             travel_interest: "true",
+             other_interest: "socks")
 
 delali = User.find(1)
 7.times do
