@@ -1,1 +1,10 @@
-window.open (<%= recommendation_path %>, "window", "width=800, height=400");
+$(document).ready(function(){
+  // once the recommendation title is clicked in app/views/users/review, the recommendation details will be shown
+  $('#rec-title-<%=@recommendation.id %>').click(function() {
+
+    el = document.getElementById('#rec-<%= @recommendation.id %>-details');
+    //el.style.visibility = (el.style.visibility == "visibile") ? "hidden" : "visible";
+    $('body').append('<%= escape_javascript(render :template => "recommendations/show.html.erb") %>');
+
+  });
+});

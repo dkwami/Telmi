@@ -1,0 +1,9 @@
+$(document).ready(function(){
+  // once the recommendation title is clicked in app/views/users/review, the recommendation details will be shown
+  $('#rec-title-<%=@recommendation.id %>').click(function(event) {
+  //  event.preventDefault();
+    var myWindow = window.open("<%=recommendation_path%>","","height=200","width=200","titlebar=no","toolbar=no","location=no");
+    $('#category-<%= @recommendation.id %>').toggle();
+    $('#description-<%= @recommendation.id %>').toggle();
+  });
+});

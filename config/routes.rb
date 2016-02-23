@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get                             'sessions/new'
+  get       'sessions/new'
 
-  root			                      'static_pages#home'
+  root	    'static_pages#home'
   
   # Route for getting the NDA page. Is called when "Sign Up" is clicked in header.
   get       'nda_page'        =>  'users#nda_page'
@@ -23,14 +23,14 @@ Rails.application.routes.draw do
   get       'review'          =>  'users#review'
 
   # Routes to make a new session. Is called when a user logs in.
-  get       'login'           =>	'sessions#new'
-  post      'login'           =>	'sessions#create'
+  get       'login'           => 'sessions#new'
+  post      'login'           => 'sessions#create'
   
   # Route to destroy the current session. Is called when "Log Out" is clicked in the header.
-  delete    'logout'          =>	'sessions#destroy'
+  delete    'logout'          => 'sessions#destroy'
 
   resources :users
-  resources :recommendations, only: [:create, :destroy, :show]
+  resources :recommendations
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
