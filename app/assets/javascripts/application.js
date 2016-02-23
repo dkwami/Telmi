@@ -19,32 +19,46 @@
 
 //= require bootstrap-datepicker
 
-/* Everything in this section is code I don't want to get rid of yet but can't
-figure out why it isn't working yet.
+/* Everything in this section is code I don't want to fuck up because it works.
 
-function showThatField(FieldClass) {
-    document.getElementsByClassName("FieldClass").style.display = "block";
-}
 
-$(document.getElementById("read_interest_box")).on("click", function () {
-    showThatField("read_interest_text");
-});
-
-$(document.getElementById("read-interest-box")).on("click", function () {
-    if (document.getElementById("read-interest-text").style.display == "none") {
-    document.getElementById("read-interest-text").style.display = 'block';
-    } else if (document.getElementById("read-interest-text").style.display == 'block') {
-    document.getElementById("read-interest-text").style.display = "none";    
-    }
-});
+document.getElementById("help").innerHTML = "Javascript Active";
 
 var readInterestText = document.getElementById("read-interest-text"),
-    readInterestBox = document.getElementById("read-interest-box");
-readInterestBox.checked = false;
-readInterestBox.onchange = function showThatField() {
-    readInterestText.style.display = this.checked ? "block" : "none";
+    readInterestBox = document.getElementById("read-interest-box"),
+    watchInterestText = document.getElementById("watch-interest-text"),
+    watchInterestBox = document.getElementById("watch-interest-box"),
+    listenInterestText = document.getElementById("listen-interest-text"),
+    listenInterestBox = document.getElementById("listen-interest-box"),
+    playInterestText = document.getElementById("play-interest-text"),
+    playInterestBox = document.getElementById("play-interest-box"),
+    eatInterestText = document.getElementById("eat-interest-text"),
+    eatInterestBox = document.getElementById("eat-interest-box"),
+    visitInterestText = document.getElementById("visit-interest-text"),
+    visitInterestBox = document.getElementById("visit-interest-box"),
+    otherInterestText = document.getElementById("other-interest-text"),
+    otherInterestBox = document.getElementById("other-interest-box");
+
+readInterestText.style.display = "none";
+watchInterestText.style.display = "none";
+listenInterestText.style.display = "none";
+playInterestText.style.display = "none";
+eatInterestText.style.display = "none";
+visitInterestText.style.display = "none";
+otherInterestText.style.display = "none";
+
+
+readInterestBox.onclick = function() {
+    showThatField(this, readInterestText);
 };
-readInterestBox.onchange();
+
+function showThatField(box, field) {
+    if (box.checked) {
+        field.style.display = 'block';
+    } else {
+        field.style.display = 'none';
+    }
+}
 
 */
 
@@ -67,23 +81,33 @@ var readInterestText = document.getElementById("read-interest-text"),
     otherInterestText = document.getElementById("other-interest-text"),
     otherInterestBox = document.getElementById("other-interest-box");
 
-function showThatField(fieldClass) {
-    fieldClass.style.display = "block";
-}
-
 readInterestText.style.display = "none";
+
 watchInterestText.style.display = "none";
+/*
 listenInterestText.style.display = "none";
 playInterestText.style.display = "none";
 eatInterestText.style.display = "none";
 visitInterestText.style.display = "none";
 otherInterestText.style.display = "none";
+*/
 
-readInterestBox.on("click", function showThatField(readInterestText) {
-});
+readInterestBox.onclick = function() {
+    showThatField(this, readInterestText);
+};
 
-watchInterestBox.on("click", function () {
-    showThatField(watchInterestText);
-});
+watchInterestBox.onclick = function() {
+    showThatField(this, watchInterestText);
+};
+
+function showThatField(box, field) {
+    if (box.checked) {
+        field.style.display = 'block';
+    } else {
+        field.style.display = 'none';
+    }
+}
+
+
 
 //etc
