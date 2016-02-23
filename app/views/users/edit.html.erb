@@ -35,7 +35,7 @@
       <%= f.check_box :other_interest, id: "other-interest-box" %>
       <%= f.text_field :other_interest, id: "other-interest-text" %><br>
       
-      <%= fields_for :books do |b| %>
+      <%= f.fields_for :books do |b| %>
         
         <% b.label :title, "List the types of things you like to read and have
                             read." %>
