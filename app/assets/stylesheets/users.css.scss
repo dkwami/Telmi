@@ -33,11 +33,15 @@
 }
 
 // style for "New Recommendation" button
-#show-rec-form{
-  width: 250px;  
+#new-recommendation{
+  width: 250px;
   margin-left: 20%;
 }
 
 #recommendation-form{
+  display: none;
+  border: 1px solid #e8e8e8;
+  width: 25%;
+  padding: 15px;
   margin-top: 5%;
 }
