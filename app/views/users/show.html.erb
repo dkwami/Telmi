@@ -47,11 +47,12 @@
       </ul>
   <% end %>
 
-  <%= link_to 'New Recommendation', '#', class: "btn btn-primary btn-lg", id: "show-rec-form" %>
-  <!-- submit_tag "New Recommendation", :type => 'button', id: 'show-rec-form', class: 'btn btn-primary btn-lg' -->
+  <%= button_tag "New Recommendation", type: "button", class: "btn btn-primary", id: "show-rec-form" %>
+  <!--<button id="show-rec-form" class="btn btn-primary">New Recommendation</button> -->
+  <!-- link_to 'New Recommendation', '#', class: "btn btn-primary btn-lg", id: "show-rec-form" -->
 </div>
 
   <!-- removed if statement since users will have to be logged in to get to this page -->  
-  <section class="recommendation_form col-md-offset-2" id="user-recommendation-submit">
-      <%= render 'shared/recommendation_form' %>
+  <section id="recommendation-form" class="col-md-offset-2">
+    <%= render 'shared/recommendation_form' %>
   </section>
