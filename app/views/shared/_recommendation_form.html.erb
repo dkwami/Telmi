@@ -24,6 +24,7 @@
     <!-- gets the id of the user currently being viewed so 
          that a recommendation can be created for that user -->
     <%= f.hidden_field(:user_id, :value => @user.id) %>
+
+  <%= f.submit "I'm Done", class: "btn btn-primary", id: "rec-form-submit" %>
   </div>
-  <%= f.submit "I'm Done", class: "btn btn-primary" %>
 <% end %>

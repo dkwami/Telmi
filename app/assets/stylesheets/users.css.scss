@@ -16,7 +16,29 @@
   list-style: none;
   width: 70%;
   li {
-    border: 1px solid #e8e8e8;
+    border: 1px solid #f8f8f8;
     padding: 5px;
   }
+}
+
+.recommendation_form{
+  border: 1px solid #e8e8e8;
+  width: 25%;
+  padding: 15px;
+}
+
+// recommendation form "I'm Done" button
+#rec-form-submit{
+  float: right;
+}
+
+// style for "New Recommendation" button
+#show-rec-form{
+  width: 250px;  
+  margin-left: 20%;
+}
+
+// recommendation form on user#show page
+#user-recommendation-submit{
+  margin-top: 5%;
 }
