@@ -1,3 +1,5 @@
+<%= javascript_include_tag "application" %>
+
 <h1>This page will be used for TLM-5 Recommendation View</h1>
 <div class="col-md-offset-1">
   <p>Name: <%= @user.firstName %> <%= @user.lastName %></p>
@@ -47,8 +49,8 @@
   <% end %>
 </div>
 
-  <% if logged_in? %>
-    <section class="recommendation_form col-md-offset-2">
+<button id="my-btn">New Recommendation</button>
+
+    <section class="recommendation_form col-md-offset-2" id="my-form">
       <%= render 'shared/recommendation_form' %>
     </section>
-  <% end %>
