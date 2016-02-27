@@ -1,11 +1,20 @@
 class User < ActiveRecord::Base
   has_many :recommendations, dependent: :destroy
+  #Commented out to test fields_for
   has_and_belongs_to_many :books
+  #has_many :books_users
+  #has_many :books, :through => :books_users
   has_and_belongs_to_many :movies
   has_and_belongs_to_many :songs
   has_and_belongs_to_many :games
   has_and_belongs_to_many :foods
   has_and_belongs_to_many :destinations
+  accepts_nested_attributes_for :books
+  accepts_nested_attributes_for :movies
+  accepts_nested_attributes_for :songs
+  accepts_nested_attributes_for :games
+  accepts_nested_attributes_for :foods
+  accepts_nested_attributes_for :destinations
 
   before_save {self.username = username.downcase}
   before_save {self.email    = email.downcase}

@@ -34,43 +34,10 @@
       <%= f.label :other_interest, "Other:" %>
       <%= f.check_box :other_interest, id: "other-interest-box" %>
       <%= f.text_field :other_interest, id: "other-interest-text" %><br>
-      
-      <%= f.fields_for :books do |b| %>
-        
-        <% b.label :title, "List the types of things you like to read and have
-                            read." %>
-        <% b.text_field :title, id: "read-interest-text" %>
-        
-      <% end %>
 
       <%= f.submit "Finish", class: "btn btn-primary" %>
       
     <% end %>
     
-    <br>
-    
-    <div id="read-interest-text">
-      
-      Read interest text box proxy.
-      
-    </div>
-    
-    <br>
-    
-    <div id="watch-interest-text">
-      
-      Watch interest text box proxy.
-      
-    </div>
-    
-    <br>
-    
-    <div class="signup-2-hidden-div" id="help">
-      
-      Here's some texty text.
-      
-    </div>
-    
   </div>
 </div>
-<%= javascript_include_tag "application" %>

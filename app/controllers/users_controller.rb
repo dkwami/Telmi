@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   # checks to make sure there is a logged in user before loading the page and
   #performs certain actions if there isn't
-  before_action :logged_in_user, only: [:edit, :recommendations, :index, 
+  before_action :logged_in_user, only: [:augment, :recommendations, :index, 
                                         :review]
                                         
   # checks to make sure the user view the page is the user which should be
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   #before_action :correct_user, only: [:edit, :recommendations]
   
   # checks to make sure the user's nda_agree is "true", or it redirects to nda
-  before_action :nda_signed, only: [:edit, :recommendations, :index, :review]
+  before_action :nda_signed, only: [:augment, :recommendations, :index, :review]
   
   #Action to display the NDA page. Called when "Sign Up" is clicked.
   def nda_page
@@ -21,12 +21,12 @@ class UsersController < ApplicationController
   
   #Action to create a new user. Called when "I agree" is clicked on NDA page.
   def new
-    @user =         User.new
-    @books =        Book.all
-    @movies =       Movie.all
-    @songs =        Song.all
-    @games =        Game.all
-    @foods =        Food.all
+    @user         =        User.new
+    @books        =        Book.all
+    @movies       =       Movie.all
+    @songs        =        Song.all
+    @games        =        Game.all
+    @foods        =        Food.all
     @destinations = Destination.all
     @@nda_agree = true
   end
@@ -39,9 +39,15 @@ class UsersController < ApplicationController
     if @user.save
       @user.update_attribute(:nda_agree, @@nda_agree)
       log_in @user
-      @read_interest = @user.read_interest
+      #@read_interest = @user.read_interest
       # Previously "signup2"
       render 'edit'
+      @book        =        Book.new
+      @movie       =       Movie.new
+      @song        =        Song.new
+      @game        =        Game.new
+      @food        =        Food.new
+      @destination = Destination.new
     else
       render 'new'
     end
@@ -53,6 +59,7 @@ class UsersController < ApplicationController
   def augment
     @users = User.all
     @user = current_user
+    #@user.books.build(params[:book][:title])
     if @user.update_attributes(user_params)
       flash[:success] = "Welcome to Telmi!"
       render 'index'

@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def new
     @book = Book.new
-    @user = User.all
+    @users = User.all
   end
 
   private
