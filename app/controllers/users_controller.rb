@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   # checks to make sure there is a logged in user before loading the page and
   #performs certain actions if there isn't
-  before_action :logged_in_user, only: [:edit, :recommendations, :index, 
+  before_action :logged_in_user, only: [:augment, :recommendations, :index, 
                                         :review]
                                         
   # checks to make sure the user view the page is the user which should be
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   #before_action :correct_user, only: [:edit, :recommendations]
   
   # checks to make sure the user's nda_agree is "true", or it redirects to nda
-  before_action :nda_signed, only: [:edit, :recommendations, :index, :review]
+  before_action :nda_signed, only: [:augment, :recommendations, :index, :review]
   
   #Action to display the NDA page. Called when "Sign Up" is clicked.
   def nda_page
